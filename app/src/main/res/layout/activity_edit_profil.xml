@@ -4,6 +4,162 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#eaeaea"
+
     tools:context=".EditProfilActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="35dp">
+
+        <TextView
+            android:id="@+id/tvEPNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:paddingBottom="5dp"
+            android:textColor="#093847"
+            android:textStyle="bold"
+            android:text="Nama" />
+
+        <EditText
+            android:id="@+id/etEPNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="6dp"
+            android:background="@drawable/rounded_edittext"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/tvEPEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:paddingBottom="5dp"
+            android:text="E-mail"
+            android:textColor="#093847"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etEPEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="6dp"
+            android:ems="10"
+            android:background="@drawable/rounded_edittext"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:id="@+id/tvEPNomorHP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:paddingBottom="5dp"
+            android:textColor="#093847"
+            android:textStyle="bold"
+            android:text="Nomor HP" />
+
+        <EditText
+            android:id="@+id/etEPNomorHP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="6dp"
+            android:background="@drawable/rounded_edittext"
+            android:ems="10"
+            android:inputType="number"
+            android:phoneNumber="true" />
+
+        <TextView
+            android:id="@+id/tvEPAlamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:paddingBottom="5dp"
+            android:textColor="#093847"
+            android:textStyle="bold"
+            android:text="Alamat" />
+
+        <EditText
+            android:id="@+id/etEPAlamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:paddingLeft="6dp"
+            android:background="@drawable/rounded_edittext"
+            android:ems="10"
+            android:inputType="textMultiLine" />
+
+        <TextView
+            android:id="@+id/tvEPPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:paddingBottom="5dp"
+            android:textColor="#093847"
+            android:textStyle="bold"
+            android:text="Kata Sandi" />
+
+        <EditText
+            android:id="@+id/etEPPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_edittext"
+            android:ems="10"
+            android:hint="Minimal 6 karakter (termasuk kapital dan angka)"
+            android:inputType="textPersonName"
+            android:paddingLeft="6dp"
+            android:textColorHint="#ffffff"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvEPConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:paddingBottom="5dp"
+            android:textColor="#093847"
+            android:textStyle="bold"
+            android:text="Konfirmasi" />
+
+        <EditText
+            android:id="@+id/etConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_edittext"
+            android:ems="10"
+            android:hint="Masukan ulang kata sandi diatas"
+            android:inputType="textPersonName"
+            android:paddingLeft="6dp"
+            android:textColorHint="#ffffff"
+            android:textSize="14sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button_hijau"
+            android:text="S I M P A N"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
