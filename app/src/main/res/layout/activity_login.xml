@@ -70,7 +70,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="@null" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -92,6 +93,7 @@
             android:id="@+id/tvLupaSandi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clickable="true"
             android:text="Lupa Kata Sandi?"
             android:textColor="#ffffff"
             tools:layout_editor_absoluteX="85dp"
@@ -114,6 +116,7 @@
             android:id="@+id/tvDaftar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clickable="true"
             android:text="Daftar Disini"
             android:textColor="#ffffff"
             tools:layout_editor_absoluteX="224dp"
