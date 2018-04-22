@@ -9,33 +9,42 @@
     tools:context=".EditProfilActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="329dp"
+        android:layout_height="492dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginStart="15dp"
         android:orientation="vertical"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="35dp"
-        android:layout_marginLeft="35dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/tvEPNama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="bottom"
             android:paddingBottom="5dp"
+            android:text="Nama"
             android:textColor="#093847"
-            android:textStyle="bold"
-            android:text="Nama" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etEPNama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingLeft="6dp"
             android:background="@drawable/rounded_edittext"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:paddingLeft="6dp"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tvEPEmail"
@@ -53,10 +62,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingLeft="6dp"
-            android:ems="10"
             android:background="@drawable/rounded_edittext"
-            android:inputType="textEmailAddress" />
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="6dp"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tvEPNomorHP"
@@ -65,20 +75,21 @@
             android:layout_weight="1"
             android:gravity="bottom"
             android:paddingBottom="5dp"
+            android:text="Nomor HP"
             android:textColor="#093847"
-            android:textStyle="bold"
-            android:text="Nomor HP" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etEPNomorHP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingLeft="6dp"
             android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:inputType="number"
-            android:phoneNumber="true" />
+            android:paddingLeft="6dp"
+            android:phoneNumber="true"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tvEPAlamat"
@@ -87,19 +98,20 @@
             android:layout_weight="1"
             android:gravity="bottom"
             android:paddingBottom="5dp"
+            android:text="Alamat"
             android:textColor="#093847"
-            android:textStyle="bold"
-            android:text="Alamat" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etEPAlamat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:paddingLeft="6dp"
+            android:layout_weight="4"
             android:background="@drawable/rounded_edittext"
             android:ems="10"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:paddingLeft="6dp"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tvEPPass"
@@ -108,9 +120,9 @@
             android:layout_weight="1"
             android:gravity="bottom"
             android:paddingBottom="5dp"
+            android:text="Kata Sandi"
             android:textColor="#093847"
-            android:textStyle="bold"
-            android:text="Kata Sandi" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etEPPass"
@@ -132,9 +144,9 @@
             android:layout_weight="1"
             android:gravity="bottom"
             android:paddingBottom="5dp"
+            android:text="Konfirmasi"
             android:textColor="#093847"
-            android:textStyle="bold"
-            android:text="Konfirmasi" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etConfirm"
@@ -161,5 +173,35 @@
             android:textStyle="bold" />
 
     </LinearLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="412dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="#093847"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvToolbarEP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:paddingBottom="5dp"
+            android:paddingLeft="23dp"
+            android:paddingRight="20dp"
+            android:paddingTop="5dp"
+            android:text="Edit Profil"
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="11dp"/>
+    </android.support.v7.widget.Toolbar>
 
 </android.support.constraint.ConstraintLayout>
