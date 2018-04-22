@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Bullet</string>
+    <string name="nav_profil">Profil</string>
+    <string name="nac_chat">Chat</string>
+    <string name="nav_penjualan">Penjualan</string>
+    <string name="nav_Keuangan">Keuangan</string>
+    <string name="nav_Peminjaman">Peminjaman</string>
 </resources>

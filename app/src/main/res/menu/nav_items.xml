@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/user_icon"
+        android:title="@string/nav_profil" />
+    <item
+        android:icon="@drawable/chat_icon"
+        android:title="@string/nac_chat" />
+    <item
+        android:icon="@drawable/shop_icon"
+        android:title="@string/nav_penjualan" />
+    <item
+        android:icon="@drawable/bounty_icon"
+        android:title="@string/nav_Keuangan" />
+    <item
+        android:icon="@drawable/cheque_icon"
+        android:title="@string/nav_Peminjaman" />
+</menu>
