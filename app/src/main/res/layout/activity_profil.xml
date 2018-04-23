@@ -8,7 +8,7 @@
 
 
     <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottomNavigationView3"
+        android:id="@+id/bottomNavView"
         android:layout_width="403dp"
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
