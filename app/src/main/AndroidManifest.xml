@@ -19,8 +19,12 @@
         <activity android:name=".EditProfilActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity" />
+<<<<<<< HEAD
         <activity android:name=".SignUpActivity" />
         <activity android:name=".ResetPasswordActivity"></activity>
+=======
+        <activity android:name=".InfoUsahaActivity"></activity>
+>>>>>>> 48d6b05263e6f6a037273132a2961a3247f1d037
     </application>
 
 </manifest>
