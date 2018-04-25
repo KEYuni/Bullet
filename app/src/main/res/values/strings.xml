@@ -5,4 +5,5 @@
     <string name="nav_penjualan">Penjualan</string>
     <string name="nav_Keuangan">Keuangan</string>
     <string name="nav_Peminjaman">Peminjaman</string>
+    <string name="title_activity_reset_password">ResetPasswordActivity</string>
 </resources>
