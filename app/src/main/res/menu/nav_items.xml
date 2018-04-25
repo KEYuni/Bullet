@@ -5,17 +5,17 @@
 
     <item
         android:icon="@drawable/user_icon"
-        android:title="@string/nav_profil" />
+        android:title="@null" />
     <item
         android:icon="@drawable/chat_icon"
-        android:title="@string/nac_chat" />
+        android:title="@null" />
     <item
         android:icon="@drawable/shop_icon"
-        android:title="@string/nav_penjualan" />
+        android:title="@null" />
     <item
         android:icon="@drawable/bounty_icon"
-        android:title="@string/nav_Keuangan" />
+        android:title="@null" />
     <item
         android:icon="@drawable/cheque_icon"
-        android:title="@string/nav_Peminjaman" />
+        android:title="@null" />
 </menu>

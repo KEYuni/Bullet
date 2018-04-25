@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#eaeaea"
     tools:context=".ProfilActivity">
 
 
@@ -15,6 +16,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="#093847"
+        android:paddingStart="12dp"
+        android:paddingLeft="12dp"
+        android:paddingEnd="12dp"
+        android:paddingRight="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,22 +54,28 @@
         </android.support.v7.widget.Toolbar>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:src="@drawable/ic_launcher_background"/>
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/profil"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#093847"
             android:text="ID nevermore"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="65dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="15dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_gravity="center_horizontal"
@@ -77,21 +88,25 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="#093847"
                     android:layout_margin="5dp"
                     android:text="Nama"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="#093847"
                     android:layout_margin="5dp"
                     android:text="E-mail"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="#093847"
                     android:layout_margin="5dp"
                     android:text="Nomor HP"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="#093847"
                     android:layout_margin="5dp"
                     android:text="Alamat"/>
 
@@ -104,29 +119,40 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="#093847"
                     android:layout_margin="5dp"
+                    android:textStyle="bold"
                     android:text=": Adevara"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="#093847"
                     android:layout_margin="5dp"
+                    android:textStyle="bold"
                     android:text=": adevara@gmail.com"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="#093847"
                     android:layout_margin="5dp"
+                    android:textStyle="bold"
                     android:text=": +6285321173979"/>
+
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="54dp"
                     android:layout_margin="5dp"
-                    android:text="Jl.Setiabudhi No. 229, Isola, Sukasari"/>
+                    android:text=": Jl.Setiabudhi No. 229,
+   Isola, Sukasari, Isola, Sukasari
+   Kota Bandung, Jawa Barat 40154"
+                    android:textColor="#093847"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </LinearLayout>
 
         <Button
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/rounded_button_biru"
