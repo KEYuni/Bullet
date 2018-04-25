@@ -19,13 +19,13 @@
             android:id="@+id/tvToolbarEP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="12dp"
-            android:paddingLeft="12dp"
             android:paddingEnd="20dp"
+            android:paddingLeft="12dp"
             android:paddingRight="20dp"
+            android:paddingStart="12dp"
             android:text="Edit Profil"
             android:textColor="#ffffff"
-            android:textSize="25sp"/>
+            android:textSize="25sp" />
 
     </android.support.v7.widget.Toolbar>
 
