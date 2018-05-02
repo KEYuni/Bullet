@@ -22,8 +22,9 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".ResetPasswordActivity" />
-        <activity android:name=".InfoUsahaActivity"></activity>
-        <activity android:name=".ForgotPasswordActivity"></activity>
+        <activity android:name=".InfoUsahaActivity" />
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".CatatanKeuanganActivity"></activity>
     </application>
 
 </manifest>
