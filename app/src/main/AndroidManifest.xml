@@ -24,7 +24,8 @@
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".InfoUsahaActivity" />
         <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".CatatanKeuanganActivity"></activity>
+        <activity android:name=".CatatanKeuanganActivity" />
+        <activity android:name=".Forum"></activity>
     </application>
 
 </manifest>
