@@ -28,7 +28,8 @@
         <activity android:name=".Forum" />
         <activity android:name=".ForumInsideActivity" />
         <activity android:name=".NewForumActivity" />
-        <activity android:name=".DaftarProdukActivity"></activity>
+        <activity android:name=".DaftarProdukActivity" />
+        <activity android:name=".DetailProductActivity"></activity>
     </application>
 
 </manifest>
