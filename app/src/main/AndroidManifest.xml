@@ -26,7 +26,8 @@
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".CatatanKeuanganActivity" />
         <activity android:name=".Forum" />
-        <activity android:name=".ForumInsideActivity"></activity>
+        <activity android:name=".ForumInsideActivity" />
+        <activity android:name=".NewForumActivity"></activity>
     </application>
 
 </manifest>
