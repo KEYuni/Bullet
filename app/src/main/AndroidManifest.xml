@@ -33,7 +33,8 @@
         <activity android:name=".TambahProdukActivity" />
         <activity android:name=".DaftarPembeliActivity" />
         <activity android:name=".DetailPembeliActivity" />
-        <activity android:name=".PeminjamanActivity"></activity>
+        <activity android:name=".PeminjamanActivity" />
+        <activity android:name=".CatatanPeminjamanActivity"></activity>
     </application>
 
 </manifest>
