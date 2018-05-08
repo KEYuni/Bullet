@@ -35,7 +35,8 @@
         <activity android:name=".DetailPembeliActivity" />
         <activity android:name=".PeminjamanActivity" />
         <activity android:name=".CatatanPeminjamanActivity" />
-        <activity android:name=".PembayaranActivity"></activity>
+        <activity android:name=".PembayaranActivity" />
+        <activity android:name=".CatatanPenjualanActivity"></activity>
     </application>
 
 </manifest>
