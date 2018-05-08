@@ -30,7 +30,8 @@
         <activity android:name=".NewForumActivity" />
         <activity android:name=".DaftarProdukActivity" />
         <activity android:name=".DetailProductActivity" />
-        <activity android:name=".TambahProdukActivity"></activity>
+        <activity android:name=".TambahProdukActivity" />
+        <activity android:name=".DaftarPembeliActivity"></activity>
     </application>
 
 </manifest>
