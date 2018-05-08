@@ -27,7 +27,8 @@
         <activity android:name=".CatatanKeuanganActivity" />
         <activity android:name=".Forum" />
         <activity android:name=".ForumInsideActivity" />
-        <activity android:name=".NewForumActivity"></activity>
+        <activity android:name=".NewForumActivity" />
+        <activity android:name=".DaftarProdukActivity"></activity>
     </application>
 
 </manifest>
