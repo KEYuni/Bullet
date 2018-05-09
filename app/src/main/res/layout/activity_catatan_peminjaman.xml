@@ -37,7 +37,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tvDateCatPinjam"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="viewEnd"
@@ -52,7 +52,7 @@
                 android:text="Jumlah Peminjaman" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/tvJumPinjam"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -70,7 +70,7 @@
                 android:text="Jumlah yang harus dibayar" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/tvJumBayar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -95,7 +95,7 @@
                     android:text="Saya menggunakan kode berikut" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tvKodeBayar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
@@ -109,6 +109,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/btnPembayaran"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
