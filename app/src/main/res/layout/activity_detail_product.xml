@@ -6,4 +6,174 @@
     android:layout_height="match_parent"
     tools:context=".DetailProductActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="#093847">
+
+            <TextView
+                android:id="@+id/tvToolbarEP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="20dp"
+                android:paddingStart="12dp"
+                android:text="Detail Produk"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/rounded_button_navi">
+
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/detail_pembeli"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="55dp"
+                android:layout_marginBottom="3dp"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:textColor="#ffffff"
+                        android:text="Nama Produk        :"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#ffffff"
+                        android:layout_margin="5dp"
+                        android:text="Deskripsi Produk  :"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="170dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:textColor="#ffffff"
+                    android:text="Kemeja Slimfit"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:background="@drawable/background_biru_tua"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#ffffff"
+                        android:layout_margin="5dp"
+                        android:text="Kategori                 :"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#ffffff"
+                        android:layout_margin="5dp"
+                        android:text="Harga                     :"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#ffffff"
+                        android:layout_margin="5dp"
+                        android:text="Stok                       :"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#ffffff"
+                        android:layout_margin="5dp"
+                        android:text="Pakaian Formal"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#ffffff"
+                        android:layout_margin="5dp"
+                        android:text="Rp 450.000,-"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#ffffff"
+                        android:layout_margin="5dp"
+                        android:text="43"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottomNavView"
+        android:layout_width="403dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#093847"
+        android:paddingStart="12dp"
+        android:paddingLeft="12dp"
+        android:paddingEnd="12dp"
+        android:paddingRight="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/nav_items" />
+
 </android.support.constraint.ConstraintLayout>
