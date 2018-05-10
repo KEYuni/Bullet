@@ -25,7 +25,7 @@
                 android:paddingLeft="12dp"
                 android:paddingRight="20dp"
                 android:paddingStart="12dp"
-                android:text="Datfar Akun"
+                android:text="Daftar Akun"
                 android:textColor="#ffffff"
                 android:textSize="25sp" />
 
