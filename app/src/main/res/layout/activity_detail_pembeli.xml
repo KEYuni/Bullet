@@ -22,8 +22,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
-                android:paddingLeft="12dp"
-                android:paddingRight="20dp"
                 android:paddingStart="12dp"
                 android:text="Detail Pembelian"
                 android:textColor="#ffffff"
@@ -56,7 +54,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -171,9 +169,7 @@
         android:layout_marginTop="8dp"
         android:background="#093847"
         android:paddingStart="12dp"
-        android:paddingLeft="12dp"
         android:paddingEnd="12dp"
-        android:paddingRight="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

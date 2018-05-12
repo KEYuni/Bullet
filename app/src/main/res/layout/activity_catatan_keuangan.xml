@@ -45,9 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="12dp"
-                android:paddingLeft="12dp"
                 android:paddingEnd="20dp"
-                android:paddingRight="20dp"
                 android:text="Catatan Keuangan  "
                 android:textColor="#ffffff"
                 android:textSize="25sp"/>
