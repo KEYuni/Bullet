@@ -79,18 +79,28 @@
                 </LinearLayout>
 
                 <EditText
+                    android:id="@+id/etNamaProduk"
                     android:layout_width="match_parent"
                     android:layout_height="22dp"
+                    android:padding="5dp"
+                    android:textColor="#ffffff"
+                    android:inputType="text"
+                    android:textSize="12sp"
                     android:layout_marginTop="3dp"
                     android:background="@drawable/rounded_button_navi"/>
 
             </LinearLayout>
 
             <EditText
+                android:id="@+id/etDeskripsiProduk"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
+                android:padding="5dp"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                android:inputType="textMultiLine"
                 android:background="@drawable/rounded_button_navi"/>
 
             <LinearLayout
@@ -137,19 +147,30 @@
                     android:orientation="vertical">
 
                     <Spinner
+                        android:id="@+id/spKategoriProduk"
                         android:layout_width="match_parent"
                         android:layout_height="22dp"
                         android:background="@drawable/rounded_button_navi"/>
 
                     <EditText
+                        android:id="@+id/etHargaProduk"
                         android:layout_width="match_parent"
                         android:layout_marginTop="8dp"
+                        android:padding="5dp"
+                        android:textSize="12sp"
+                        android:textColor="#ffffff"
+                        android:inputType="number"
                         android:layout_height="22dp"
                         android:background="@drawable/rounded_button_navi"/>
 
                     <EditText
+                        android:id="@+id/etStokProduk"
                         android:layout_width="match_parent"
                         android:layout_marginTop="8dp"
+                        android:padding="5dp"
+                        android:textSize="12sp"
+                        android:textColor="#ffffff"
+                        android:inputType="number"
                         android:layout_height="22dp"
                         android:background="@drawable/rounded_button_navi"/>
                 </LinearLayout>
@@ -163,6 +184,7 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/btnOkeTambahProduk"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#ffffff"
@@ -171,6 +193,7 @@
                     android:layout_weight="1"/>
 
                 <Button
+                    android:id="@+id/btnBatalTambahProduk"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#ffffff"

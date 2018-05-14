@@ -6,4 +6,10 @@
     <string name="nav_Keuangan">Keuangan</string>
     <string name="nav_Peminjaman">Peminjaman</string>
     <string name="title_activity_reset_password">ResetPasswordActivity</string>
+
+    <string-array name="kategoriProduk">
+        <item>Fashion</item>
+        <item>Elektronik</item>
+        <item>Food</item>
+    </string-array>
 </resources>
