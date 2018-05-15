@@ -34,6 +34,7 @@ public class DaftarProdukActivity extends AppCompatActivity {
 
         rvDaftarProduk = findViewById(R.id.rvDaftarProduk);
         rvDaftarProduk.setAdapter(new ProdukAdapter(this, produks));
+        rvDaftarProduk.setHasFixedSize(true);
         rvDaftarProduk.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
 

@@ -7,8 +7,7 @@ public class Accounts {
     public Accounts() {
     }
 
-    public Accounts(int id, int koin, String nama, String email, String no_hp, String alamat, String kata_sandi, String konfirmasi_sandi) {
-        this.id = id;
+    public Accounts(int koin, String nama, String email, String no_hp, String alamat, String kata_sandi, String konfirmasi_sandi) {
         this.koin = koin;
         this.nama = nama;
         this.email = email;

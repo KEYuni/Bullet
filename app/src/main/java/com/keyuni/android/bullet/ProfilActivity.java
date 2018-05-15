@@ -7,10 +7,16 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.lang.reflect.Field;
 
 public class ProfilActivity extends AppCompatActivity {
+
+    public TextView tvNama, tvEmail, tvNoHP, tvAlamat;
+    public ImageView fotoProfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +24,16 @@ public class ProfilActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profil);
         BottomNavigationView btm = findViewById(R.id.bottomNavView);
         disableShiftMode(btm);
+
+
+        fotoProfil = findViewById(R.id.ivFotoProfil);
+        tvNama = findViewById(R.id.tvNamaProfl);
+        tvEmail = findViewById(R.id.tvEmailProfil);
+        tvNoHP = findViewById(R.id.tvNohpProfil);
+        tvAlamat = findViewById(R.id.tvAlamatProfil);
+
+
+
     }
     @SuppressLint("RestrictedApi")
     private void disableShiftMode(BottomNavigationView view) {

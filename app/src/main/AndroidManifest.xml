@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".DaftarProdukActivity">
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +28,7 @@
         <activity android:name=".Forum" />
         <activity android:name=".ForumInsideActivity" />
         <activity android:name=".NewForumActivity" />
-        <activity android:name=".SplashScreenActivity" />
+        <activity android:name=".DaftarProdukActivity" />
         <activity android:name=".DetailProductActivity" />
         <activity android:name=".TambahProdukActivity" />
         <activity android:name=".DaftarPembeliActivity" />
@@ -36,7 +36,8 @@
         <activity android:name=".PeminjamanActivity" />
         <activity android:name=".CatatanPeminjamanActivity" />
         <activity android:name=".PembayaranActivity" />
-        <activity android:name=".CatatanPenjualanActivity"></activity>
+        <activity android:name=".CatatanPenjualanActivity" />
+        <activity android:name=".UpdateProdukActivity"></activity>
     </application>
 
 </manifest>
