@@ -13,9 +13,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.keyuni.android.bullet.DaftarProdukActivity;
 import com.keyuni.android.bullet.DetailProductActivity;
 import com.keyuni.android.bullet.R;
 import com.keyuni.android.bullet.UpdateProdukActivity;
+import com.keyuni.android.bullet.db.DbProduk;
 import com.keyuni.android.bullet.model.Produk;
 
 import java.util.ArrayList;
@@ -56,7 +58,7 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         final Produk produk = produks.get(position);
 
         //holder.imgV.setText(transaksi.get());
@@ -89,7 +91,16 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
                 builder.setNeutralButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(context, "Delete Menu", Toast.LENGTH_SHORT).show();
+                        DbProduk dbProduk = new DbProduk(context);
+                        dbProduk.open();
+                        dbProduk.deleteProduk(produk.getId_produk(), context);
+
+                        produks.remove(position);
+                        notifyItemRemoved(position);
+                        notifyItemRangeChanged(position, produks.size());
+                        notifyDataSetChanged();
+
+                        dbProduk.close();
                     }
                 });
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
