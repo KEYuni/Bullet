@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.keyuni.android.bullet.db.DbAccount;
 import com.keyuni.android.bullet.model.Accounts;
 
 public class LoginActivity extends AppCompatActivity {
@@ -18,6 +19,8 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     SQLiteDatabase db;
     private TextView tvDaftar, tvForgotPassword;
+    private DbAccount dbAkun;
+    private Accounts akun;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,9 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         tvDaftar = findViewById(R.id.tvDaftar);
         tvForgotPassword = findViewById(R.id.tvLupaSandi);
+
+        dbAkun = new DbAccount(this);
+        dbAkun.open();
 
         tvForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override

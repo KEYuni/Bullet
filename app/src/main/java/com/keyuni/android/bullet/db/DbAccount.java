@@ -25,7 +25,6 @@ public class DbAccount {
         db.close();
     }
 
-
     public long insertProduk(Accounts akun){
         ContentValues newV = new ContentValues();
         newV.put("koin", 100000);
@@ -73,27 +72,17 @@ public class DbAccount {
         Toast.makeText(context, "Updated successfully.", Toast.LENGTH_SHORT).show();
     }
 
-    public boolean checkAccount(String email, String password){
-        String[] columns = {
-            "id"
-        };
+    //public boolean checkAccount(String email, String password){
+      //  db = dbAccount.getReadableDatabase();
+        //Cursor cur = db.rawQuery("Select * from USER where email=? and katasandi=?", new String[]{email, katasandi});
+       // if (cur.getCount()>0) return true;
+       // else return false;
+   // }
 
+    public boolean checkEmail(String email){
         db = dbAccount.getReadableDatabase();
-
-        String selection = "email" + "= ?" + "AND" + "katasandi" + "=?";
-        String[] selectionArgs = {email, password};
-
-        Cursor cur = db.query("user", columns, selection, selectionArgs, null, null, null);
-
-        int curCount = cur.getCount();
-
-        cur.close();
-        db.close();
-
-        if(curCount > 0){
-            return true;
-        }
-
-        return false;
+        Cursor cur = db.rawQuery("Select * from USER where email=?", new String[]{email});
+        if (cur.getCount()>0) return false;
+        else return true;
     }
 }

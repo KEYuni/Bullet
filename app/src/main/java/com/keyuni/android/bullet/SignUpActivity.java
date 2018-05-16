@@ -48,15 +48,27 @@ public class SignUpActivity extends AppCompatActivity {
                 kataSandi = etKataSandi.getText().toString().trim();
                 konfirmasiSandi = etKonfirmasiKataSandi.getText().toString().trim();
 
-                akun = new Accounts(100000, nama, email, noHP, alamat, kataSandi, konfirmasiSandi);
-                dbAkun.insertProduk(akun);
-                dbAkun.close();
-                finish();
+                if(kataSandi.equals(konfirmasiSandi)) {
+                    //Boolean chkemail = dbAkun.checkEmail(email);
 
-                Toast.makeText(getApplicationContext(), "Daftar Akun berhasil.", Toast.LENGTH_SHORT).show();
+                    //if (chkemail == true) {
+                        akun = new Accounts(100000, nama, email, noHP, alamat, kataSandi, konfirmasiSandi);
+                        dbAkun.insertProduk(akun);
+                        dbAkun.close();
+                        finish();
 
-                Intent intentSignUp = new Intent(getBaseContext(), LoginActivity.class);
-                startActivity(intentSignUp);
+                        Toast.makeText(getApplicationContext(), "Daftar Akun berhasil", Toast.LENGTH_SHORT).show();
+
+                        Intent intentSignUp = new Intent(getBaseContext(), LoginActivity.class);
+                        startActivity(intentSignUp);
+
+
+                    //}else{
+                      //  Toast.makeText(getApplicationContext(), "Email sudah terdaftar", Toast.LENGTH_SHORT).show();
+                    //}
+                }else{
+                    Toast.makeText(getApplicationContext(), "Kata Sandi Tidak Sama", Toast.LENGTH_SHORT).show();
+                }
             }
 
         });

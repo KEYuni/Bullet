@@ -31,6 +31,7 @@
 
         </android.support.v7.widget.Toolbar>
 
+
         <LinearLayout
             android:layout_width="345dp"
             android:layout_height="496dp"
@@ -194,4 +195,6 @@
         </LinearLayout>
 
     </LinearLayout>
+
+
 </android.support.constraint.ConstraintLayout>
