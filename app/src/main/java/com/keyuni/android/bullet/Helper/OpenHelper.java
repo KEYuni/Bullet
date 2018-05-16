@@ -12,7 +12,7 @@ public class OpenHelper extends SQLiteOpenHelper{
 
     //Membuat tabel user
     public static final String TABLE_CREATE_USER =
-            "CREATE TABLE USER (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, KOIN INTEGER, NAMA TEXT, " +
+            "CREATE TABLE USER (_ID INTEGER PRIMARY KEY AUTOINCREMENT, KOIN INTEGER, NAMA TEXT, " +
                     "EMAIL TEXT, NO_HP TEXT, ALAMAT TEXT, KATASANDI TEXT, KONFIRMASI_SANDI TEXT)" ;
 
     public static final String TABLE_CREATE_PRODUK =
@@ -20,7 +20,7 @@ public class OpenHelper extends SQLiteOpenHelper{
                     "STOK INTEGER, NAMA_PRODUK TEXT, DESKRIPSI_PRODUK TEXT, KATEGORI TEXT)" ;
 
     public static final String TABLE_CREATE_USAHA =
-            "CREATE TABLE USAHA (ID_USAHA INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, ID_USER INTEGER, NAMA_USAHA TEXT, " +
+            "CREATE TABLE USAHA (_ID_USAHA INTEGER PRIMARY KEY AUTOINCREMENT, ID_USER INTEGER, NAMA_USAHA TEXT, " +
                     "EMAIL_USAHA TEXT, NOHP_USAHA TEXT, JENIS_USAHA TEXT, ALAMAT_USAHA TEXT)" ;
 
     public OpenHelper(Context context) {

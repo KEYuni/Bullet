@@ -34,13 +34,14 @@ public class SignUpActivity extends AppCompatActivity {
         btnDaftar = findViewById(R.id.btnDaftar);
 
         dbAkun = new DbAccount(this);
-        dbAkun.open();
+
 
         btnDaftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String nama, email, noHP, alamat, kataSandi, konfirmasiSandi;
-
+                int koin;
+                koin = 100000;
                 nama = etNama.getText().toString().trim();
                 email = etEmail.getText().toString().trim();
                 noHP = etNoHP.getText().toString().trim();
@@ -49,23 +50,24 @@ public class SignUpActivity extends AppCompatActivity {
                 konfirmasiSandi = etKonfirmasiKataSandi.getText().toString().trim();
 
                 if(kataSandi.equals(konfirmasiSandi)) {
-                    //Boolean chkemail = dbAkun.checkEmail(email);
+                    Boolean chkemail = dbAkun.checkEmail(email);
 
-                    //if (chkemail == true) {
-                        akun = new Accounts(100000, nama, email, noHP, alamat, kataSandi, konfirmasiSandi);
-                        dbAkun.insertProduk(akun);
+                    if (chkemail == true) {
+                        dbAkun.open();
+                        akun = new Accounts(koin, nama, email, noHP, alamat, kataSandi, konfirmasiSandi);
+                        Boolean insAkun = dbAkun.insertAkun(akun);
                         dbAkun.close();
                         finish();
 
-                        Toast.makeText(getApplicationContext(), "Daftar Akun berhasil", Toast.LENGTH_SHORT).show();
+                        if(insAkun == true){
+                            Toast.makeText(getApplicationContext(), "Daftar Akun berhasil", Toast.LENGTH_SHORT).show();
 
-                        Intent intentSignUp = new Intent(getBaseContext(), LoginActivity.class);
-                        startActivity(intentSignUp);
-
-
-                    //}else{
-                      //  Toast.makeText(getApplicationContext(), "Email sudah terdaftar", Toast.LENGTH_SHORT).show();
-                    //}
+                            Intent intentSignUp = new Intent(getBaseContext(), LoginActivity.class);
+                            startActivity(intentSignUp);
+                        }
+                    }else{
+                       Toast.makeText(getApplicationContext(), "Email sudah terdaftar", Toast.LENGTH_SHORT).show();
+                    }
                 }else{
                     Toast.makeText(getApplicationContext(), "Kata Sandi Tidak Sama", Toast.LENGTH_SHORT).show();
                 }

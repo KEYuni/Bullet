@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.keyuni.android.bullet.Helper.OpenHelper;
 import com.keyuni.android.bullet.model.Accounts;
+import com.keyuni.android.bullet.model.Produk;
 
 public class DbAccount {
     private SQLiteDatabase db;
@@ -25,21 +26,27 @@ public class DbAccount {
         db.close();
     }
 
-    public long insertProduk(Accounts akun){
+    public boolean insertAkun(Accounts akun){
         ContentValues newV = new ContentValues();
-        newV.put("koin", 100000);
+        newV.put("koin", akun.getKoin());
         newV.put("nama", akun.getNama());
         newV.put("email", akun.getEmail());
         newV.put("no_hp", akun.getNo_hp());
         newV.put("alamat", akun.getAlamat());
         newV.put("katasandi", akun.getKata_sandi());
-        newV.put("konfirmasi_katasandi", akun.getKonfirmasi_sandi());
+        newV.put("konfirmasi_sandi", akun.getKonfirmasi_sandi());
 
-        return db.insert("user", null, newV);
+        long ins = db.insert("user", null, newV);
+        if(ins == -1) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
     public Accounts getAccount(long id){
-        Cursor cur = db.rawQuery("SELECT  * FROM USER WHERE _id="+ id, null);
+        Cursor cur = db.rawQuery("SELECT  * FROM USER WHERE id="+ id, null);
 
         Accounts receivedAccounts = new Accounts();
         if(cur.getCount() > 0){
@@ -72,12 +79,12 @@ public class DbAccount {
         Toast.makeText(context, "Updated successfully.", Toast.LENGTH_SHORT).show();
     }
 
-    //public boolean checkAccount(String email, String password){
-      //  db = dbAccount.getReadableDatabase();
-        //Cursor cur = db.rawQuery("Select * from USER where email=? and katasandi=?", new String[]{email, katasandi});
-       // if (cur.getCount()>0) return true;
-       // else return false;
-   // }
+    public boolean checkAccount(String email, String katasandi){
+        db = dbAccount.getReadableDatabase();
+        Cursor cur = db.rawQuery("Select * from USER where email=? and katasandi=?", new String[]{email, katasandi});
+        if (cur.getCount()>0) return true;
+        else return false;
+    }
 
     public boolean checkEmail(String email){
         db = dbAccount.getReadableDatabase();

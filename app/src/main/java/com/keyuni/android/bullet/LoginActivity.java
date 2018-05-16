@@ -34,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
         tvForgotPassword = findViewById(R.id.tvLupaSandi);
 
         dbAkun = new DbAccount(this);
-        dbAkun.open();
 
         tvForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,8 +63,16 @@ public class LoginActivity extends AppCompatActivity {
                 username = etUsername.getText().toString().trim();
                 password = etPassword.getText().toString().trim();
 
-                Intent intentLogin = new Intent(getBaseContext(), DaftarProdukActivity.class);
-                startActivity(intentLogin);
+                Boolean chkAkun = dbAkun.checkAccount(username, password);
+
+                if(chkAkun == true){
+                    Intent intentLogin = new Intent(getBaseContext(), DaftarProdukActivity.class);
+                    startActivity(intentLogin);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Email atau Password salah", Toast.LENGTH_SHORT).show();
+                }
+
+
             }
 
         });
