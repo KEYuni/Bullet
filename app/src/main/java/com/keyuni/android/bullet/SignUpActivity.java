@@ -1,8 +1,14 @@
 package com.keyuni.android.bullet;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +18,15 @@ import com.keyuni.android.bullet.db.DbAccount;
 import com.keyuni.android.bullet.db.DbProduk;
 import com.keyuni.android.bullet.model.Accounts;
 import com.keyuni.android.bullet.model.Produk;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -56,6 +71,7 @@ public class SignUpActivity extends AppCompatActivity {
                         dbAkun.open();
                         akun = new Accounts(koin, nama, email, noHP, alamat, kataSandi, konfirmasiSandi);
                         Boolean insAkun = dbAkun.insertAkun(akun);
+
                         dbAkun.close();
                         finish();
 
@@ -75,5 +91,51 @@ public class SignUpActivity extends AppCompatActivity {
 
         });
 
+    }
+
+    private class AmbilDataUser extends AsyncTask<String, Integer, String> {
+
+        protected String doInBackground(String... strUrl) {
+            Log.v("yw", "mulai ambil data");
+            String result = null;
+            StringBuffer sb = new StringBuffer();
+            InputStream is = null;
+            try {
+                URL url = new URL(strUrl[0]);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                //timeout
+                conn.setReadTimeout(10000 /* milliseconds */);
+                conn.setConnectTimeout(15000 /* milliseconds */);
+
+                conn.setRequestMethod("GET");
+                conn.connect();
+
+                try {
+                    is = new BufferedInputStream(conn.getInputStream());
+                    BufferedReader br = new BufferedReader(new InputStreamReader(is));
+                    String inputLine = "";
+                    while ((inputLine = br.readLine()) != null) {
+                        sb.append(inputLine);
+                    }
+                    result = sb.toString();
+                } catch (Exception e) {
+                    Log.i("yw", "Error reading InputStream");
+                    result = null;
+                } finally {
+                    if (is != null) {
+                        try {
+                            is.close();
+                        } catch (IOException e) {
+                            Log.i("yw", "Error closing InputStream");
+                        }
+                    }
+                }
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return result;
+        }
     }
 }

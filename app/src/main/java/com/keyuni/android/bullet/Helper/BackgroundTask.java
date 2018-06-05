@@ -22,7 +22,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class BackgroundTask extends AsyncTask<Void, Accounts, Void> {
-    String json_string = "";
+    String json_string = "bullet-finance.atwebpages.com";
 
     Context context;
     Activity activity;
