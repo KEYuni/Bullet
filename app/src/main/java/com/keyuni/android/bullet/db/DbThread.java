@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
@@ -76,5 +77,28 @@ public class DbThread {
                 "judul_thread ='"+ updatedThread.getJudul_thread()+ "',kategori_thread ='"+ updatedThread.getKategori_thread()+ "', deskripsi_thread ='"+ updatedThread.getDeskripsi_thread()+
                 "', tanggal_buat ='"+ updatedThread.getTanggal_buat()+"'");
         Toast.makeText(context, "Updated successfully.", Toast.LENGTH_SHORT).show();
+    }
+
+    public ArrayList<Thread> getAllThread(){
+        Cursor cur = null;
+        ArrayList<Thread> out = new ArrayList<>();
+
+        cur = db.rawQuery("SELECT * FROM PRODUK", null);
+
+        if (cur.moveToFirst()) {
+            do{
+                Thread thread = new Thread();
+                thread.setId_thread(cur.getInt(0));
+                thread.setId_user(cur.getInt(2));
+                thread.setJudul_thread(cur.getString(3));
+                thread.setKategori_thread(cur.getString(4));
+                thread.setDeskripsi_thread(cur.getString(5));
+                //thread.setTanggal_buat(cur.getColumnName(6));
+                out.add(thread);
+            }while(cur.moveToNext());
+        }
+
+        cur.close();
+        return out;
     }
 }
