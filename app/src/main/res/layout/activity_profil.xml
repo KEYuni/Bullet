@@ -15,7 +15,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="#093847"
+        android:background="#01579B"
         android:paddingStart="12dp"
         android:paddingLeft="12dp"
         android:paddingEnd="12dp"
@@ -37,7 +37,7 @@
             android:id="@+id/toolbar2"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:background="#093847">
+            android:background="#01579B">
 
             <TextView
                 android:id="@+id/tvToolbarEP"

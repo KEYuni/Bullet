@@ -16,7 +16,7 @@
             android:id="@+id/toolbar2"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:background="#093847">
+            android:background="#01579B">
 
             <TextView
                 android:id="@+id/tvToolbarEP"
@@ -124,7 +124,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#ffffff"
-                        android:background="@drawable/background_biru2"
+                        android:background="@drawable/rounded_button_cancel"
                         android:text="Batal"
                         android:layout_weight="1"/>
 
