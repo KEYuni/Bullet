@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.content.SharedPreferences;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -21,6 +22,10 @@ public class LoginActivity extends AppCompatActivity {
     private TextView tvDaftar, tvForgotPassword;
     private DbAccount dbAkun;
     private Accounts akun;
+    SharedPreferences sp;
+    SharedPreferences.Editor ed;
+    public static final String PREFS_NAME = "Authentification";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,9 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         tvDaftar = findViewById(R.id.tvDaftar);
         tvForgotPassword = findViewById(R.id.tvLupaSandi);
+
+        sp = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        ed = sp.edit();
 
         dbAkun = new DbAccount(this);
 
@@ -66,7 +74,11 @@ public class LoginActivity extends AppCompatActivity {
                 Boolean chkAkun = dbAkun.checkAccount(username, password);
 
                 if(chkAkun == true){
-                    Intent intentLogin = new Intent(getBaseContext(), DaftarProdukActivity.class);
+                    ed.putString("id", username);
+                    ed.putString("passwd", password);
+                    ed.commit();
+
+                    Intent intentLogin = new Intent(getBaseContext(), ProfilActivity.class);
                     startActivity(intentLogin);
                 }else{
                     Toast.makeText(getApplicationContext(), "Email atau Password salah", Toast.LENGTH_SHORT).show();

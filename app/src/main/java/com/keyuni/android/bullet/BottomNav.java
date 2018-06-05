@@ -1,37 +1,21 @@
 package com.keyuni.android.bullet;
 
-import android.content.Intent;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 
-
-import com.keyuni.android.bullet.Fragment.BountyFragment;
+import com.keyuni.android.bullet.Fragment.ProfilFragment;
 import com.keyuni.android.bullet.Fragment.ChatFragment;
 import com.keyuni.android.bullet.Fragment.ChequeFragment;
-import com.keyuni.android.bullet.Fragment.ProfilFragment;
+import com.keyuni.android.bullet.Fragment.BountyFragment;
 import com.keyuni.android.bullet.Fragment.ShopFragment;
-import com.keyuni.android.bullet.Helper.ProdukAdapter;
-import com.keyuni.android.bullet.db.DbProduk;
-import com.keyuni.android.bullet.model.Produk;
 
-import java.util.ArrayList;
-
-public class DaftarProdukActivity extends AppCompatActivity {
-
-    private Button btnTambahProduk;
-    private RecyclerView rvDaftarProduk;
-    private DbProduk dbProduk;
-    private ArrayList<Produk> produks;
+public class BottomNav extends AppCompatActivity {
 
     private BottomNavigationView mMainNav;
     private FrameLayout mMainFrame;
@@ -44,28 +28,8 @@ public class DaftarProdukActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_daftar_produk);
+        setContentView(R.layout.activity_bottom_nav);
 
-        dbProduk = new DbProduk(this);
-        dbProduk.open();
-
-        produks = dbProduk.getAllProduk();
-
-        rvDaftarProduk = findViewById(R.id.rvDaftarProduk);
-        rvDaftarProduk.setAdapter(new ProdukAdapter(this, produks));
-        rvDaftarProduk.setHasFixedSize(true);
-        rvDaftarProduk.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-
-        btnTambahProduk = findViewById(R.id.btnTambahProduk);
-
-        btnTambahProduk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentAddProduk = new Intent(getBaseContext(), TambahProdukActivity.class);
-                startActivity(intentAddProduk);
-            }
-
-        });
         mMainFrame = findViewById(R.id.main_frame);
         mMainNav = findViewById(R.id.bottomNavView);
 
@@ -107,7 +71,6 @@ public class DaftarProdukActivity extends AppCompatActivity {
                     default:
                         return false;
                 }
-
             }
         });
     }
@@ -117,5 +80,4 @@ public class DaftarProdukActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.main_frame, fragment);
         fragmentTransaction.commit();
     }
-
 }

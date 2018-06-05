@@ -71,10 +71,10 @@ public class DbAccount {
         Toast.makeText(context, "Deleted successfully.", Toast.LENGTH_SHORT).show();
     }
 
-    public void updateAccount(long idUser, Context context, Accounts updatedAccount){
+    public void updateAccount(int idUser, Context context, Accounts updatedAccount){
         db.execSQL("UPDATE  USER SET nama ='" + updatedAccount.getNama()+ "', email ='"+ updatedAccount.getEmail() + "'," +
                 "no_hp ='"+ updatedAccount.getNo_hp()+ "', alamat ='"+ updatedAccount.getAlamat() + "'," +
-                "katasandi ='"+ updatedAccount.getKata_sandi()+ "', konfirmasi_katasandi ='"+ updatedAccount.getKonfirmasi_sandi() +
+                "katasandi ='"+ updatedAccount.getKata_sandi()+ "', konfirmasi_sandi ='"+ updatedAccount.getKonfirmasi_sandi() +
                 "'  WHERE _id='" + idUser + "'");
         Toast.makeText(context, "Updated successfully.", Toast.LENGTH_SHORT).show();
     }
@@ -91,5 +91,26 @@ public class DbAccount {
         Cursor cur = db.rawQuery("Select * from USER where email=?", new String[]{email});
         if (cur.getCount()>0) return false;
         else return true;
+    }
+
+    public Accounts getId_Accounts(String email){
+        db = dbAccount.getReadableDatabase();
+        Cursor cur = db.rawQuery("Select * from USER where email=?", new String[] {email});
+
+        Accounts receivedAccounts = new Accounts();
+        if(cur.getCount() > 0){
+            cur.moveToFirst();
+
+            receivedAccounts.setId(cur.getInt(0));
+            receivedAccounts.setKoin(100000);
+            receivedAccounts.setNama(cur.getString(2));
+            receivedAccounts.setEmail(cur.getString(3));
+            receivedAccounts.setNo_hp(cur.getString(4));
+            receivedAccounts.setAlamat(cur.getString(5));
+            receivedAccounts.setKata_sandi(cur.getString(6));
+            receivedAccounts.setKonfirmasi_sandi(cur.getString(7));
+        }
+
+        return receivedAccounts;
     }
 }
