@@ -17,7 +17,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
     public SharedPreferences sp;
     public SharedPreferences.Editor ed;
     private EditText etEmail, etNewPass, etKonfNewPass;
-    private int id;
+    //private int id;
     String strEmail;
     Button btnReset;
     private DbAccount dbAkun;
@@ -36,26 +36,28 @@ public class ResetPasswordActivity extends AppCompatActivity {
         sp = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         ed = sp.edit();
 
-        id = sp.getInt("id", 0);
-        strEmail = sp.getString("email", "");
+        //id = sp.getInt("id", 0);
+        //strEmail = sp.getString("email", "");
         dbAkun = new DbAccount(this);
         dbAkun.open();
 
-        akun = dbAkun.getAccount(id);
+        //akun = dbAkun.getAccount(id);
 
-        etEmail.setText(String.valueOf(akun.getEmail()));
-        etNewPass.setText(String.valueOf(akun.getKata_sandi()));
-        etKonfNewPass.setText(String.valueOf(akun.getKonfirmasi_sandi()));
+        //etEmail.setText(String.valueOf(akun.getEmail()));
+        //etNewPass.setText(String.valueOf(akun.getKata_sandi()));
+        //etKonfNewPass.setText(String.valueOf(akun.getKonfirmasi_sandi()));
 
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String eEmail;
+                String eEmail, newPass, konfNewpass;
                 eEmail = etEmail.getText().toString().trim();
-                if(etKonfNewPass.equals(etNewPass)){
+                newPass = etNewPass.getText().toString().trim();
+                konfNewpass = etKonfNewPass.getText().toString().trim();
+                if(konfNewpass.equals(newPass)){
                     Boolean chkemail = dbAkun.checkEmail(eEmail);
 
-                    if(chkemail == false) {
+                    if(chkemail == true) {
                         int koin = akun.getKoin();
 
                         String nama, email, noHp, alamat, katasandi, konf;
