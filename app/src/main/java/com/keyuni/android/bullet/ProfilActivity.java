@@ -36,7 +36,7 @@ public class ProfilActivity extends AppCompatActivity {
 
     public TextView tvNama, tvEmail, tvNoHP, tvAlamat;
     public ImageView fotoProfil;
-    Button editButton;
+    Button editButton, btnLogout;
     public SharedPreferences sp;
     public SharedPreferences.Editor ed;
     String strPasswd;
@@ -65,6 +65,7 @@ public class ProfilActivity extends AppCompatActivity {
         tvNoHP = findViewById(R.id.tvNohpProfil);
         tvAlamat = findViewById(R.id.tvAlamatProfil);
         editButton = findViewById(R.id.btnEditProfil);
+        btnLogout = findViewById(R.id.btnLogout);
 
         dbAccount = new DbAccount(this);
         dbAccount.open();
@@ -85,6 +86,15 @@ public class ProfilActivity extends AppCompatActivity {
                 startActivity(intentProfil);
             }
 
+        });
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intentOut = new Intent(getBaseContext(), LoginActivity.class);
+                startActivity(intentOut);
+            }
         });
     }
     @SuppressLint("RestrictedApi")
