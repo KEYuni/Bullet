@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.keyuni.android.bullet.db.DbAccount;
 import com.keyuni.android.bullet.model.Accounts;
+import com.keyuni.android.bullet.model.Peminjaman;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -85,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                     ed.putString("passwd", password);
                     ed.commit();
 
-                    Intent intentLogin = new Intent(getBaseContext(), InfoUsahaActivity.class);
+                    Intent intentLogin = new Intent(getBaseContext(), PeminjamanActivity.class);
                     startActivity(intentLogin);
                 }else{
                     Toast.makeText(getApplicationContext(), "Email atau Password salah", Toast.LENGTH_SHORT).show();
