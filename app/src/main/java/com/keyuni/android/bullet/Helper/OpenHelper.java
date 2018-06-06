@@ -23,6 +23,26 @@ public class OpenHelper extends SQLiteOpenHelper{
             "CREATE TABLE USAHA (_ID_USAHA INTEGER PRIMARY KEY AUTOINCREMENT, ID_USER INTEGER, NAMA_USAHA TEXT, " +
                     "EMAIL_USAHA TEXT, NOHP_USAHA TEXT, JENIS_USAHA TEXT, ALAMAT_USAHA TEXT)" ;
 
+    public static final String TABLE_CREATE_THREAD =
+            "CREATE TABLE THREAD (_ID_THREAD INTEGER PRIMARY KEY AUTOINCREMENT, ID_USER INTEGER, JUDUL_THREAD TEXT," +
+                    "KATEGORI_THREAD TEXT, DESKRIPSI_THREAD TEXT, TANGGAL_BUAT DATE)";
+
+    public static final String TABLE_CREATE_KOMENTAR =
+            "CREATE TABLE KOMENTAR (_ID_KOMENTAR INTEGER PRIMARY KEY AUTOINCREMENT, ID_USER INTEGER, ID_THREAD INTEGER, " +
+                    "ISI_KOMENTAR TEXT, TANGGAL_BUAT DATE)" ;
+
+    public static final String TABLE_CREATE_PEMBELI =
+            "CREATE TABLE PEMBELI (_ID_PEMBELI INTEGER PRIMARY KEY AUTOINCREMENT, ID_USER INTEGER, ID_USAHA INTEGER, " +
+                    "ID_PRODUK INTEGER, KODE_TRANSAKSI TEXT, JUMLAH_BELI INTEGER, TANGGAL_BELI DATET)" ;
+
+    public static final String TABLE_CREATE_PEMINJAMAN  =
+            "CREATE TABLE PEMINJAMAN (_ID_PINJAM INTEGER PRIMARY KEY AUTOINCREMENT, ID_USER INTEGER, JUMLAH_PINJAM INTEGER, " +
+                    "DURASI_PINJAM INTEGER, TANGGAL_PINJAM DATE, STATUS TEXT)" ;
+
+    public static final String TABLE_CREATE_KEUANGAN =
+            "CREATE TABLE KEUANGAN (_ID_KEUANGAN INTEGER PRIMARY KEY AUTOINCREMENT, ID_USER INTEGER, PENGELUARAN INTEGER, " +
+                    "PEMASUKAN INTEGER)" ;
+
     public OpenHelper(Context context) {
         super (context, DATABASE_NAME , null , DATABASE_VERSION );
     }
@@ -32,6 +52,11 @@ public class OpenHelper extends SQLiteOpenHelper{
         db.execSQL( TABLE_CREATE_USER );
         db.execSQL( TABLE_CREATE_PRODUK );
         db.execSQL( TABLE_CREATE_USAHA );
+        db.execSQL( TABLE_CREATE_THREAD);
+        db.execSQL( TABLE_CREATE_KOMENTAR);
+        db.execSQL( TABLE_CREATE_PEMBELI);
+        db.execSQL( TABLE_CREATE_PEMINJAMAN);
+        db.execSQL( TABLE_CREATE_KEUANGAN);
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -40,5 +65,10 @@ public class OpenHelper extends SQLiteOpenHelper{
         db.execSQL( "DROP TABLE IF EXISTS USER" );
         db.execSQL( "DROP TABLE IF EXISTS PRODUK" );
         db.execSQL( "DROP TABLE IF EXISTS USAHA" );
+        db.execSQL( "DROP TABLE IF EXISTS KEUANGAN" );
+        db.execSQL( "DROP TABLE IF EXISTS PEMBELI" );
+        db.execSQL( "DROP TABLE IF EXISTS PEMINJAMAN" );
+        db.execSQL( "DROP TABLE IF EXISTS THREAD" );
+        db.execSQL( "DROP TABLE IF EXISTS KOMENTAR" );
     }
 }

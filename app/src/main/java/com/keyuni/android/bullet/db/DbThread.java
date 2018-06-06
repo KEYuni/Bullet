@@ -43,7 +43,7 @@ public class DbThread {
         newV.put("judul_thread", thread.getJudul_thread());
         newV.put("kategori_thread", thread.getKategori_thread());
         newV.put("deskripsi_thread", thread.getDeskripsi_thread());
-        newV.put("tanggal_buat", getDateTime());
+        //newV.put("tanggal_buat", thread.getTanggal_buat());
 
         return db.insert("thread", null, newV);
     }
@@ -60,7 +60,7 @@ public class DbThread {
             receivedThread.setJudul_thread(cur.getString(cur.getColumnIndex("judul_thread")));
             receivedThread.setKategori_thread(cur.getString(cur.getColumnIndex("kategori_thread")));
             receivedThread.setDeskripsi_thread(cur.getString(cur.getColumnIndex("deskripsi_thread")));
-            //receivedThread.setTanggal_buat(cur.getLong(cur.getColumnIndex("tanggal_buat")));
+            //receivedThread.setTanggal_buat(cur.getString(cur.getColumnIndex("tanggal_buat")));
         }
 
         return receivedThread;
