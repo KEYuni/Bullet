@@ -39,7 +39,8 @@ public class ProfilActivity extends AppCompatActivity {
     Button editButton;
     public SharedPreferences sp;
     public SharedPreferences.Editor ed;
-    String strID, strPasswd;
+    String strPasswd;
+    int idAkun;
     private DbAccount dbAccount;
     private Accounts accounts;
     public static final String PREFS_NAME = "Authentification";
@@ -55,7 +56,7 @@ public class ProfilActivity extends AppCompatActivity {
         sp = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         ed = sp.edit();
 
-        strID = sp.getString("id", "");
+        idAkun= sp.getInt("id",  0);
         strPasswd = sp.getString("passwd", "");
 
         fotoProfil = findViewById(R.id.ivFotoProfil);
@@ -68,7 +69,7 @@ public class ProfilActivity extends AppCompatActivity {
         dbAccount = new DbAccount(this);
         dbAccount.open();
 
-        accounts = dbAccount.getId_Accounts(strID);
+        accounts = dbAccount.getAccount(idAkun);
 
         tvNama.setText(": " +String.valueOf(accounts.getNama()));
         tvAlamat.setText(": " +String.valueOf(accounts.getAlamat()));

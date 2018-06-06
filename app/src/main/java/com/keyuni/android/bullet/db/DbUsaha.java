@@ -29,7 +29,6 @@ public class DbUsaha {
 
     public long insertUsaha(Usaha usaha){
         ContentValues newV = new ContentValues();
-        newV.put("id_usaha", usaha.getId_usaha());
         newV.put("id_user", usaha.getId_user());
         newV.put("nama_usaha", usaha.getNama_usaha());
         newV.put("email_usaha", usaha.getEmail_usaha());
@@ -41,19 +40,18 @@ public class DbUsaha {
     }
 
     public Usaha getUsaha(long id){
-        Cursor cur = db.rawQuery("SELECT  * FROM USER WHERE id="+ id, null);
+        Cursor cur = db.rawQuery("SELECT  * FROM USAHA WHERE id_user="+ id, null);
 
         Usaha receivedUsaha = new Usaha();
         if(cur.getCount() > 0){
             cur.moveToFirst();
 
-            receivedUsaha.setId_usaha(cur.getInt(cur.getColumnIndex("id_usaha")));
-            receivedUsaha.setId_user(cur.getInt(cur.getColumnIndex("id_user")));
-            receivedUsaha.setNama_usaha(cur.getString(cur.getColumnIndex("nama_usaha")));
-            receivedUsaha.setEmail_usaha(cur.getString(cur.getColumnIndex("email_usaha")));
-            receivedUsaha.setNohp_usaha(cur.getString(cur.getColumnIndex("nohp_usaha")));
-            receivedUsaha.setJenis_usaha(cur.getString(cur.getColumnIndex("jenis_usaha")));
-            receivedUsaha.setAlamat_usaha(cur.getString(cur.getColumnIndex("alamat_usaha")));
+            receivedUsaha.setNama_usaha(cur.getString(2));
+            receivedUsaha.setEmail_usaha(cur.getString(3));
+            receivedUsaha.setNohp_usaha(cur.getString(4));
+            receivedUsaha.setJenis_usaha(cur.getString(5));
+            receivedUsaha.setAlamat_usaha(cur.getString(6));
+
         }
 
         return receivedUsaha;
@@ -66,9 +64,16 @@ public class DbUsaha {
     }
 
     public void updateUsaha(long idUsaha, Context context, Usaha updatedUsaha){
-        db.execSQL("UPDATE  USAHA SET id_usaha ='" + updatedUsaha.getId_usaha() + "', id_user ='"+ updatedUsaha.getId_user() + "'," +
+        db.execSQL("UPDATE  USAHA SET _id_usaha ='" + updatedUsaha.getId_usaha() + "', id_user ='"+ updatedUsaha.getId_user() + "'," +
                 "nama_usaha ='"+ updatedUsaha.getNama_usaha()+ "',email_usaha ='"+ updatedUsaha.getEmail_usaha()+ "', nohp_usaha ='"+ updatedUsaha.getNohp_usaha()+
                 "', jenis_usaha ='"+ updatedUsaha.getJenis_usaha()+"', alamat_usaha ='"+ updatedUsaha.getAlamat_usaha() + "'");
         Toast.makeText(context, "Updated successfully.", Toast.LENGTH_SHORT).show();
+    }
+
+    public boolean checkUsaha(long idUser){
+        db = dbUsaha.getReadableDatabase();
+        Cursor cur = db.rawQuery("SELECT  * FROM USAHA WHERE id_user="+ idUser, null);
+        if (cur.getCount()>0) return true;
+        else return false;
     }
 }

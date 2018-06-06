@@ -8,12 +8,18 @@
     tools:context=".InfoUsahaActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="389dp"
+        android:layout_height="574dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar2"
@@ -49,102 +55,152 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="0dp"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
                     android:text="Nama Usaha"
                     android:textColor="#093847" />
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="3dp"
+                    android:text=" : "
+                    android:textColor="#093847"/>
+
+                <TextView
+                    android:id="@+id/tvIUNamaUsaha"
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="3dp"
+                    android:text="........................................"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
                     android:text="E-mail"
                     android:textColor="#093847" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
-                    android:text="Nomor HP"
-                    android:textColor="#093847" />
+                    android:text=" : "
+                    android:textColor="#093847"/>
 
                 <TextView
+                    android:id="@+id/tvIUEmail"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
-                    android:text="Jenis Usaha"
-                    android:textColor="#093847" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="3dp"
-                    android:text="Alamat"
-                    android:textColor="#093847" />
+                    android:text="........................................"
+                    android:textColor="#093847"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvNamaUsaha"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="3dp"
+                    android:text="Nomor HP"
+                    android:textColor="#093847" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="3dp"
+                    android:text=" : "
+                    android:textColor="#093847"/>
+
+                <TextView
+                    android:id="@+id/tvIUNoHP"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
-                    android:text=": The Executive"
+                    android:text="........................................"
                     android:textColor="#093847"
                     android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvEmail"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="3dp"
+                    android:text="Jenis Usaha"
+                    android:textColor="#093847" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="3dp"
+                    android:text=" : "
+                    android:textColor="#093847"/>
+
+                <TextView
+                    android:id="@+id/tvIUJenisUsaha"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
-                    android:text=": csexecutive@executive.com"
+                    android:text="........................................"
                     android:textColor="#093847"
                     android:textStyle="bold" />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
                 <TextView
-                    android:id="@+id/tvNoHP"
-                    android:layout_width="match_parent"
+                    android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
-                    android:text=": +6283321173979"
-                    android:textColor="#093847"
-                    android:textStyle="bold" />
+                    android:text="Alamat"
+                    android:textColor="#093847" />
 
                 <TextView
-                    android:id="@+id/tvJenisUsaha"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
-                    android:text=": Konveksi"
-                    android:textColor="#093847"
-                    android:textStyle="bold" />
+                    android:text=" : "
+                    android:textColor="#093847"/>
 
                 <TextView
-                    android:id="@+id/tvAlamatUsaha"
+                    android:id="@+id/tvIUAlamatUsaha"
                     android:layout_width="match_parent"
                     android:layout_height="54dp"
                     android:layout_margin="3dp"
-                    android:text=": Jl.Setiabudhi No. 229,
-   Isola, Sukasari, Isola, Sukasari
-   Kota Bandung, Jawa Barat 40154"
+                    android:text="........................................"
                     android:textColor="#093847"
                     android:textStyle="bold" />
-
             </LinearLayout>
         </LinearLayout>
 

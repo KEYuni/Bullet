@@ -39,19 +39,18 @@ public class EditProfilActivity extends AppCompatActivity {
         sp = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         ed = sp.edit();
 
-        strID = sp.getString("id", "");
+        id = sp.getInt("id", 0);
         strPasswd = sp.getString("passwd", "");
 
         dbAccount = new DbAccount(this);
         dbAccount.open();
 
-        accounts = dbAccount.getId_Accounts(strID);
+        accounts = dbAccount.getAccount(id);
 
         eNama.setText(String.valueOf(accounts.getNama()));
         eAlamat.setText(String.valueOf(accounts.getAlamat()));
         eEmail.setText(String.valueOf(accounts.getEmail()));
         eNoHP.setText(String.valueOf(accounts.getNo_hp()));
-        id = Integer.valueOf(accounts.getId());
 
 
         btnSimpan.setOnClickListener(new View.OnClickListener() {

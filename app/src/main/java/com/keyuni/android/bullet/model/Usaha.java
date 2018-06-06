@@ -7,8 +7,7 @@ public class Usaha {
     public Usaha() {
     }
 
-    public Usaha(int id_usaha, int id_user, String nama_usaha, String email_usaha, String nohp_usaha, String jenis_usaha, String alamat_usaha) {
-        this.id_usaha = id_usaha;
+    public Usaha(int id_user, String nama_usaha, String email_usaha, String nohp_usaha, String jenis_usaha, String alamat_usaha) {
         this.id_user = id_user;
         this.nama_usaha = nama_usaha;
         this.email_usaha = email_usaha;

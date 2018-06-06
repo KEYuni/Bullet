@@ -41,7 +41,8 @@
         <activity android:name=".PembayaranActivity" />
         <activity android:name=".CatatanPenjualanActivity" />
         <activity android:name=".UpdateProdukActivity" />
-        <activity android:name=".BottomNav"></activity>
+        <activity android:name=".BottomNav" />
+        <activity android:name=".EditUsahaActivity"></activity>
     </application>
 
 </manifest>

@@ -45,20 +45,21 @@ public class DbAccount {
         }
     }
 
-    public Accounts getAccount(long id){
-        Cursor cur = db.rawQuery("SELECT  * FROM USER WHERE id="+ id, null);
+    public Accounts getAccount(int id){
+        Cursor cur = db.rawQuery("SELECT  * FROM USER WHERE _id="+ id, null);
 
         Accounts receivedAccounts = new Accounts();
         if(cur.getCount() > 0){
             cur.moveToFirst();
 
+            receivedAccounts.setId(cur.getInt(0));
             receivedAccounts.setKoin(100000);
-            receivedAccounts.setNama(cur.getString(cur.getColumnIndex("nama")));
-            receivedAccounts.setEmail(cur.getString(cur.getColumnIndex("email")));
-            receivedAccounts.setNo_hp(cur.getString(cur.getColumnIndex("no_hp")));
-            receivedAccounts.setAlamat(cur.getString(cur.getColumnIndex("alamat")));
-            receivedAccounts.setKata_sandi(cur.getString(cur.getColumnIndex("katasandi")));
-            receivedAccounts.setKonfirmasi_sandi(cur.getString(cur.getColumnIndex("konfirmasi_katasandi")));
+            receivedAccounts.setNama(cur.getString(2));
+            receivedAccounts.setEmail(cur.getString(3));
+            receivedAccounts.setNo_hp(cur.getString(4));
+            receivedAccounts.setAlamat(cur.getString(5));
+            receivedAccounts.setKata_sandi(cur.getString(6));
+            receivedAccounts.setKonfirmasi_sandi(cur.getString(7));
         }
 
         return receivedAccounts;

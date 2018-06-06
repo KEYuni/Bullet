@@ -49,6 +49,7 @@
                 android:textColor="#ffffff"/>
 
             <EditText
+                android:id="@+id/etNFJudul"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_button_navi"
@@ -68,6 +69,7 @@
                 android:textColor="#ffffff"/>
 
             <EditText
+                android:id="@+id/etNFKategori"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -93,12 +95,14 @@
                 android:background="@drawable/rounded_button_navi">
 
                 <ImageView
+                    android:id="@+id/ivNFffoto"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
                     android:src="@drawable/detail_pembeli"/>
 
                 <EditText
+                    android:id="@+id/etNFDeskripsi"
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:hint="isi topik diskusi anda"
@@ -113,6 +117,7 @@
                     android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/btnNFPost"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#ffffff"
@@ -121,6 +126,7 @@
                         android:layout_weight="1"/>
 
                     <Button
+                        android:id="@+id/btnNFBatal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#ffffff"

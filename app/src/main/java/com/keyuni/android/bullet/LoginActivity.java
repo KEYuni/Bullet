@@ -42,6 +42,9 @@ public class LoginActivity extends AppCompatActivity {
         ed = sp.edit();
 
         dbAkun = new DbAccount(this);
+        dbAkun.open();
+
+
 
         tvForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,11 +77,15 @@ public class LoginActivity extends AppCompatActivity {
                 Boolean chkAkun = dbAkun.checkAccount(username, password);
 
                 if(chkAkun == true){
-                    ed.putString("id", username);
+
+                    akun = dbAkun.getId_Accounts(username);
+                    int idAkun = akun.getId();
+
+                    ed.putInt("id", idAkun);
                     ed.putString("passwd", password);
                     ed.commit();
 
-                    Intent intentLogin = new Intent(getBaseContext(), ProfilActivity.class);
+                    Intent intentLogin = new Intent(getBaseContext(), InfoUsahaActivity.class);
                     startActivity(intentLogin);
                 }else{
                     Toast.makeText(getApplicationContext(), "Email atau Password salah", Toast.LENGTH_SHORT).show();

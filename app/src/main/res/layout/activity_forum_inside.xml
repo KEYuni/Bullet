@@ -117,6 +117,7 @@ rgurgurjgrijr"
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/btnFIBalas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#ffffff"
@@ -125,6 +126,7 @@ rgurgurjgrijr"
                     android:layout_weight="1"/>
 
                 <Button
+                    android:id="@+id/btnFIBatal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#ffffff"
