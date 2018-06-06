@@ -114,4 +114,11 @@ public class DbAccount {
 
         return receivedAccounts;
     }
+
+    public void updatePassword(String email, Context context, String kata_sandi, Accounts updatePassword){
+        db = dbAccount.getWritableDatabase();
+        db.execSQL("UPDATE PASSWORD SET katasandi ='" + updatePassword.getKata_sandi()+ "', konfirmasi_sandi='"+ updatePassword.getKonfirmasi_sandi()+
+                "'  WHERE _email='" + email + "'");
+        Toast.makeText(context, "Password berhasil di reset!.", Toast.LENGTH_SHORT).show();
+    }
 }

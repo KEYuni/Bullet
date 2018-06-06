@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intentLogin = new Intent(getBaseContext(), ForgotPasswordActivity.class);
+                Intent intentLogin = new Intent(getBaseContext(), ResetPasswordActivity.class);
                 startActivity(intentLogin);
             }
 
