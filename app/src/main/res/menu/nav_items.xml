@@ -4,18 +4,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/nav_user"
         android:icon="@drawable/user_icon"
         android:title="@null" />
     <item
+        android:id="@+id/nav_chat"
         android:icon="@drawable/chat_icon"
         android:title="@null" />
     <item
+        android:id="@+id/nav_shop"
         android:icon="@drawable/shop_icon"
         android:title="@null" />
     <item
+        android:id="@+id/nav_bounty"
         android:icon="@drawable/bounty_icon"
         android:title="@null" />
     <item
+        android:id="@+id/nav_cheque"
         android:icon="@drawable/cheque_icon"
         android:title="@null" />
 </menu>

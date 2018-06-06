@@ -22,7 +22,11 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class BackgroundTask extends AsyncTask<Void, Accounts, Void> {
-    String json_string = "bullet-finance.atwebpages.com";
+//<<<<<<< Updated upstream
+ //   String json_string = "bullet-finance.atwebpages.com";
+//=======
+    String json_string = "bullet-finance.atwebpages.com/";
+//>>>>>>> Stashed changes
 
     Context context;
     Activity activity;
@@ -78,15 +82,15 @@ public class BackgroundTask extends AsyncTask<Void, Accounts, Void> {
 
         return null;
     }
-    /*@Override
+    @Override
     protected void onPreExecute() {
-        recyclerView = (RecyclerView)activity.findViewById(R.id.recyclerView);
+        /*recyclerView = (RecyclerView)activity.findViewById(R.id.recyclerView);
         layoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         adapter = new HomeAdapter(users);
-        recyclerView.setAdapter(adapter);
-    }*/
+        recyclerView.setAdapter(adapter);*/
+    }
 
     @Override
     protected void onPostExecute(Void result) {

@@ -40,7 +40,8 @@
         <activity android:name=".CatatanPeminjamanActivity" />
         <activity android:name=".PembayaranActivity" />
         <activity android:name=".CatatanPenjualanActivity" />
-        <activity android:name=".UpdateProdukActivity"></activity>
+        <activity android:name=".UpdateProdukActivity" />
+        <activity android:name=".BottomNav"></activity>
     </application>
 
 </manifest>

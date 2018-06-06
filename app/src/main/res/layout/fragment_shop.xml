@@ -1,12 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#eaeaea"
-    tools:context=".ProfilActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.ShopFragment">
 
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="#093847">
+
+            <TextView
+                android:id="@+id/tvToolbarEP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="12dp"
+                android:paddingLeft="12dp"
+                android:paddingEnd="20dp"
+                android:paddingRight="20dp"
+                android:text="Profil"
+                android:textColor="#ffffff"
+                android:textSize="25sp"/>
+
+        </android.support.v7.widget.Toolbar>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/foto_infousaha"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#093847"
+                    android:layout_margin="3dp"
+                    android:text="Nama Usaha"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#093847"
+                    android:layout_margin="3dp"
+                    android:text="E-mail"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#093847"
+                    android:layout_margin="3dp"
+                    android:text="Nomor HP"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#093847"
+                    android:layout_margin="3dp"
+                    android:text="Jenis Usaha"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#093847"
+                    android:layout_margin="3dp"
+                    android:text="Alamat"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#093847"
+                    android:layout_margin="3dp"
+                    android:textStyle="bold"
+                    android:text=": The Executive"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#093847"
+                    android:layout_margin="3dp"
+                    android:textStyle="bold"
+                    android:text=": csexecutive@executive.com"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#093847"
+                    android:layout_margin="3dp"
+                    android:textStyle="bold"
+                    android:text=": +6283321173979"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#093847"
+                    android:layout_margin="3dp"
+                    android:textStyle="bold"
+                    android:text=": Konveksi"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_margin="3dp"
+                    android:text=": Jl.Setiabudhi No. 229,
+   Isola, Sukasari, Isola, Sukasari
+   Kota Bandung, Jawa Barat 40154"
+                    android:textColor="#093847"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button_navi"
+            android:text="P R O D U K"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button_biru"
+            android:text="P E M B E L I A N"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottomNavView"
@@ -15,7 +164,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="#01579B"
+        android:background="#093847"
         android:paddingStart="12dp"
         android:paddingLeft="12dp"
         android:paddingEnd="12dp"
@@ -27,155 +176,4 @@
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/nav_items" />
 
-
-    <LinearLayout
-        android:gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar2"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:background="#01579B">
-
-            <TextView
-                android:id="@+id/tvToolbarEP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="12dp"
-                android:paddingEnd="20dp"
-                android:text="Catatan Keuangan  "
-                android:textColor="#ffffff"
-                android:textSize="25sp"/>
-
-        </android.support.v7.widget.Toolbar>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="210dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_gravity="center_horizontal"
-            android:orientation="horizontal">
-
-
-            <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColor="#093847"
-                    android:layout_margin="5dp"
-                    android:text="Total"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColor="#093847"
-                    android:layout_margin="5dp"
-                    android:text="Pengeluaran"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColor="#093847"
-                    android:layout_margin="5dp"
-                    android:text="Pemasukan"/>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColor="#093847"
-                    android:layout_margin="5dp"
-                    android:textStyle="bold"
-                    android:text="Rp "/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColor="#093847"
-                    android:layout_margin="5dp"
-                    android:textStyle="bold"
-                    android:text="Rp "/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColor="#093847"
-                    android:layout_margin="5dp"
-                    android:textStyle="bold"
-                    android:textAlignment="textEnd"
-                    android:text="Rp "/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColor="#093847"
-                    android:layout_margin="5dp"
-                    android:textStyle="bold"
-                    android:textAlignment="textEnd"
-                    android:text="12.000.000"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColor="#093847"
-                    android:layout_margin="5dp"
-                    android:textStyle="bold"
-                    android:textAlignment="textEnd"
-                    android:text="2.900.000"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColor="#093847"
-                    android:layout_margin="5dp"
-                    android:textStyle="bold"
-                    android:textAlignment="textEnd"
-                    android:text="7.200.000"/>
-
-
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/rounded_button_biru"
-            android:text="CATATAN PEMINJAMAN"
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:textSize="18sp"
-            android:textStyle="normal" />
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_button_hijau"
-            android:text="CATATAN PENJUALAN"
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:textSize="18sp"
-            android:textStyle="normal"
-
-            />
-
-    </LinearLayout>
-
-</android.support.constraint.ConstraintLayout>
+</FrameLayout>

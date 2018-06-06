@@ -127,57 +127,9 @@
             android:paddingRight="6dp"
             android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/tvEPPass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="bottom"
-            android:paddingBottom="5dp"
-            android:text="Kata Sandi"
-            android:textColor="#093847"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etEPPass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/rounded_edittext"
-            android:ems="10"
-            android:hint="Minimal 6 karakter (termasuk kapital dan angka)"
-            android:inputType="textWebPassword"
-            android:paddingLeft="6dp"
-            android:paddingRight="6dp"
-            android:textColorHint="#ffffff"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/tvEPConfirm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="bottom"
-            android:paddingBottom="5dp"
-            android:text="Konfirmasi"
-            android:textColor="#093847"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etConfirm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/rounded_edittext"
-            android:ems="10"
-            android:hint="Masukan ulang kata sandi diatas"
-            android:inputType="textWebPassword"
-            android:paddingLeft="6dp"
-            android:paddingRight="6dp"
-            android:textColorHint="#ffffff"
-            android:textSize="14sp" />
 
         <Button
+            android:id="@+id/btnEPSimpan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
