@@ -27,20 +27,20 @@ public class DbPeminjaman {
         db.close();
     }
 
-    public long insertProduk(Peminjaman peminjaman){
+    public long insertPeminjaman(Peminjaman peminjaman){
         ContentValues newV = new ContentValues();
         newV.put("id_pinjam", peminjaman.getId_pinjam());
         newV.put("id_user", peminjaman.getId_user());
         newV.put("jumlah_pinjam", peminjaman.getJumlah_pinjam());
         newV.put("durasi_pinjam", peminjaman.getDurasi_pinjam());
-        //newV.put("tanggal_pinjam", peminjaman.getTanggal_pinjam());
+        newV.put("kode_bayar", peminjaman.getKode_bayar());
         newV.put("status", peminjaman.getStatus());
 
         return db.insert("peminjaman", null, newV);
     }
 
     public Peminjaman getPeminjaman(int id){
-        Cursor cur = db.rawQuery("SELECT  * FROM PEMINJAMAN WHERE _id_pinjam="+ id, null);
+        Cursor cur = db.rawQuery("SELECT  * FROM PEMINJAMAN WHERE _id_pinjam"+ id, null);
         //Cursor cur = null;
 
         Peminjaman receivedPinjam = new Peminjaman();
@@ -52,8 +52,8 @@ public class DbPeminjaman {
             receivedPinjam.setId_user(cur.getInt(1));
             receivedPinjam.setJumlah_pinjam(cur.getInt(2));
             receivedPinjam.setDurasi_pinjam(cur.getInt(3));
-            //receivedPinjam.setTanggal_pinjam(cur.getString(4));
-            receivedPinjam.setStatus(cur.getString(5));
+            receivedPinjam.setKode_bayar(cur.getString(5));
+            receivedPinjam.setStatus(cur.getString(4));
         }
 
         return receivedPinjam;
@@ -69,7 +69,7 @@ public class DbPeminjaman {
     public void updatePinjam(long idPinjam, Context context, Peminjaman updatedPinjam){
         db.execSQL("UPDATE  PEMINJAMAN SET id_pinjam ='"+ updatedPinjam.getId_pinjam() + "', id_user ='" + updatedPinjam.getId_user()+ "', " +
                 "jumlah_pinjam ='"+ updatedPinjam.getJumlah_pinjam() + "', durasi_pinjam ='"+ updatedPinjam.getDurasi_pinjam() + "', " +
-                "tanggal_pinjam ='"+ updatedPinjam.getTanggal_pinjam() + "', status ='"+ updatedPinjam.getStatus() + "'  WHERE _id_pinjam='" + idPinjam + "'");
+                "kode_bayar ='"+ updatedPinjam.getKode_bayar() + "', status ='"+ updatedPinjam.getStatus() + "'  WHERE _id_pinjam='" + idPinjam + "'");
         Toast.makeText(context, "Updated successfully.", Toast.LENGTH_SHORT).show();
     }
 
@@ -77,7 +77,7 @@ public class DbPeminjaman {
         Cursor cur = null;
         ArrayList<Peminjaman> out = new ArrayList<>();
 
-        cur = db.rawQuery("SELECT * FROM PRODUK", null);
+        cur = db.rawQuery("SELECT * FROM PEMINJAMAN", null);
 
         if (cur.moveToFirst()) {
             do{
@@ -86,8 +86,8 @@ public class DbPeminjaman {
                 pro.setId_user(cur.getInt(1));
                 pro.setJumlah_pinjam(cur.getInt(2));
                 pro.setDurasi_pinjam(cur.getInt(3));
-                //pro.setTanggal_pinjam(cur.getString(4));
-                pro.setStatus(cur.getString(5));
+                pro.setKode_bayar(cur.getString(5));
+                pro.setStatus(cur.getString(4));
                 out.add(pro);
             }while(cur.moveToNext());
         }

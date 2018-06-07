@@ -183,7 +183,7 @@
             android:id="@+id/btnLogout"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/rounded_button_biru"
             android:text="L O G  O U T"
             android:textAlignment="center"

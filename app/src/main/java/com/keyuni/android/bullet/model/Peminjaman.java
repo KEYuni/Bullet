@@ -1,22 +1,23 @@
 package com.keyuni.android.bullet.model;
 
 import java.sql.Time;
+import java.util.Date;
 
 public class Peminjaman {
     int id_pinjam, id_user, durasi_pinjam, jumlah_pinjam;
-    String status;
+    String status, kode_bayar;
     Time tanggal_pinjam;
 
     public Peminjaman() {
     }
 
-    public Peminjaman(int id_pinjam, int id_user, int durasi_pinjam, int jumlah_pinjam, String status, Time tanggal_pinjam) {
+    public Peminjaman(int id_pinjam, int id_user, int durasi_pinjam, int jumlah_pinjam, String status, String kode_bayar) {
         this.id_pinjam = id_pinjam;
         this.id_user = id_user;
         this.durasi_pinjam = durasi_pinjam;
         this.jumlah_pinjam = jumlah_pinjam;
         this.status = status;
-        this.tanggal_pinjam = tanggal_pinjam;
+        this.kode_bayar = kode_bayar;
     }
 
     public int getId_pinjam() {
@@ -57,6 +58,14 @@ public class Peminjaman {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getKode_bayar() {
+        return kode_bayar;
+    }
+
+    public void setKode_bayar(String kode_bayar) {
+        this.kode_bayar = kode_bayar;
     }
 
     public Time getTanggal_pinjam() {

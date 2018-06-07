@@ -19,11 +19,11 @@ public class DbThread {
     private SQLiteDatabase db;
     private final OpenHelper dbThread;
 
-    private String getDateTime() {
+    /*private String getDateTime() {
         SimpleDateFormat dateformat = new SimpleDateFormat("dd-mm-yyyy", Locale.getDefault());
-        Date date = new Date();
-        return dateformat.format(date);
-    }
+        Date tanggal_buat = dateformat.parse();
+        return dateformat.format(tanggal_buat);
+    }*/
     public DbThread(Context c){
         dbThread = new OpenHelper(c);
     }
@@ -60,7 +60,7 @@ public class DbThread {
             receivedThread.setJudul_thread(cur.getString(cur.getColumnIndex("judul_thread")));
             receivedThread.setKategori_thread(cur.getString(cur.getColumnIndex("kategori_thread")));
             receivedThread.setDeskripsi_thread(cur.getString(cur.getColumnIndex("deskripsi_thread")));
-            //receivedThread.setTanggal_buat(cur.getString(cur.getColumnIndex("tanggal_buat")));
+            //receivedThread.setTanggal_buat(cur.getLong(cur.getColumnIndex("tanggal_buat")));
         }
 
         return receivedThread;

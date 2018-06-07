@@ -1,10 +1,12 @@
 package com.keyuni.android.bullet.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Thread {
     int id_thread, id_user;
-    String judul_thread, kategori_thread, deskripsi_thread;
+    String judul_thread, kategori_thread, deskripsi_thread, stringdate;
     Date tanggal_buat;
 
     public Thread() {
@@ -18,6 +20,12 @@ public class Thread {
         this.deskripsi_thread = deskripsi_thread;
         this.tanggal_buat = tanggal_buat;
     }
+
+    /*private String getDateTime() {
+        SimpleDateFormat dateformat = new SimpleDateFormat("dd-mm-yyyy", Locale.getDefault());
+        Date tanggal_buat = dateformat.parse(stringdate);
+        return dateformat.format(tanggal_buat);
+    }*/
 
     public int getId_thread() {
         return id_thread;
