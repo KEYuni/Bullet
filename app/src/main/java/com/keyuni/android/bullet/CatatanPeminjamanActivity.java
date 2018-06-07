@@ -5,13 +5,10 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
 import android.view.Menu;
 import android.view.MenuItem;
-=======
-=======
->>>>>>> Stashed changes
+
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -19,10 +16,7 @@ import com.keyuni.android.bullet.db.DbPeminjaman;
 import com.keyuni.android.bullet.db.DbProduk;
 import com.keyuni.android.bullet.model.Peminjaman;
 import com.keyuni.android.bullet.model.Produk;
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
 
 public class CatatanPeminjamanActivity extends AppCompatActivity {
 
@@ -38,8 +32,6 @@ public class CatatanPeminjamanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catatan_peminjaman);
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
@@ -81,34 +73,5 @@ public class CatatanPeminjamanActivity extends AppCompatActivity {
                 return false;
             }
         });
-=======
-=======
->>>>>>> Stashed changes
-        /*tvjumlah_pinjam = findViewById(R.id.tvJumPinjam);
-        tvjumlah_bayar = findViewById(R.id.tvJumBayar);
-        tvkodebayar = findViewById(R.id.tvKodeBayar);
-
-        dbpinjam = new DbPeminjaman(this);
-        dbpinjam.open();
-
-        try{
-            receivedPinjamId = getIntent().getIntExtra("id_pinjam", 1);
-
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-
-        pinjam = dbpinjam.getPeminjaman(receivedPinjamId);
-        //set field to this user data
-        //idPinjam.equals(Integer.valueOf(pinjam.getId_pinjam()));
-        //idUser.equals(Integer.valueOf(pinjam.getId_user()));
-        //durasiPinjam.equals(Integer.valueOf(pinjam.getDurasi_pinjam()));
-        tvjumlah_pinjam.setText(String.valueOf(pinjam.getJumlah_pinjam()));
-        tvjumlah_bayar.setText(String.valueOf(pinjam.getJumlah_pinjam()));
-        tvkodebayar.setText(String.valueOf(pinjam.getKode_bayar()));*/
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     }
 }
