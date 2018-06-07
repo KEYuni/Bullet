@@ -3,12 +3,15 @@ package com.keyuni.android.bullet;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,6 +20,7 @@ import android.widget.Toast;
 
 import com.keyuni.android.bullet.db.DbAccount;
 import com.keyuni.android.bullet.model.Accounts;
+import com.keyuni.android.bullet.model.Usaha;
 
 import java.lang.reflect.Field;
 
@@ -50,8 +54,6 @@ public class ProfilActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
-        BottomNavigationView btm = findViewById(R.id.bottomNavView);
-        disableShiftMode(btm);
 
         sp = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         ed = sp.edit();
@@ -96,25 +98,46 @@ public class ProfilActivity extends AppCompatActivity {
                 startActivity(intentOut);
             }
         });
-    }
-    @SuppressLint("RestrictedApi")
-    private void disableShiftMode(BottomNavigationView view) {
-        BottomNavigationMenuView menuView = (BottomNavigationMenuView) view.getChildAt(0);
-        try {
-            Field shiftingMode = menuView.getClass().getDeclaredField("mShiftingMode");
-            shiftingMode.setAccessible(true);
-            shiftingMode.setBoolean(menuView, false);
-            shiftingMode.setAccessible(false);
-            for (int i = 0; i < menuView.getChildCount(); i++) {
-                BottomNavigationItemView item = (BottomNavigationItemView) menuView.getChildAt(i);
-                item.setShiftingMode(false);
-                // set once again checked value, so view will be updated
-                item.setChecked(item.getItemData().isChecked());
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(0);
+        menuItem.setChecked(true);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.nav_user:
+                        break;
+
+                    case R.id.nav_chat:
+                        Intent intent1 = new Intent(ProfilActivity.this, Forum.class);
+                        startActivity(intent1);
+                        break;
+
+                    case R.id.nav_shop:
+
+                        Intent intent0 = new Intent(ProfilActivity.this, InfoUsahaActivity.class);
+                        startActivity(intent0);
+                        break;
+
+                    case R.id.nav_bounty:
+                        Intent intent3 = new Intent(ProfilActivity.this, PeminjamanActivity.class);
+                        startActivity(intent3);
+                        break;
+
+                    case R.id.nav_cheque:
+                        Intent intent4 = new Intent(ProfilActivity.this, CatatanKeuanganActivity.class);
+                        startActivity(intent4);
+                        break;
+                }
+
+
+                return false;
             }
-        } catch (NoSuchFieldException e) {
-            Log.e("BNVHelper", "Unable to get shift mode field", e);
-        } catch (IllegalAccessException e) {
-            Log.e("BNVHelper", "Unable to change value of shift mode", e);
-        }
+        });
     }
+
 }

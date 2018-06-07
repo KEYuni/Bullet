@@ -6,34 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".PeminjamanActivity">
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="314dp"
-        android:layout_height="61dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="132dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="384dp"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#01579B">
 
+        <TextView
+            android:id="@+id/tvToolbarEP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="12dp"
+            android:paddingEnd="20dp"
+            android:text="Peminjaman"
+            android:textColor="#ffffff"
+            android:textSize="25sp"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ></LinearLayout>
     <SeekBar
         android:id="@+id/seekBar2"
         android:layout_width="309dp"
@@ -77,10 +71,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.816">
 
         <TextView

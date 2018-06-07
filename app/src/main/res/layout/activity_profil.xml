@@ -12,14 +12,14 @@
         android:id="@+id/bottomNavView"
         android:layout_width="403dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="#01579B"
         android:paddingStart="12dp"
         android:paddingLeft="12dp"
         android:paddingEnd="12dp"
         android:paddingRight="12dp"
+        android:layout_above="@id/linearProfil"
+        android:layout_alignParentBottom="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,40 +27,44 @@
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/nav_items" />
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#01579B">
+
+        <TextView
+            android:id="@+id/tvToolbarEP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="12dp"
+            android:paddingEnd="20dp"
+            android:text="Profil"
+            android:textColor="#ffffff"
+            android:textSize="25sp"/>
+
+    </android.support.v7.widget.Toolbar>
+
+
     <LinearLayout
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/linearProfil"
+        android:layout_below="@+id/toolbar2"
         android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar2"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:background="#01579B">
-
-            <TextView
-                android:id="@+id/tvToolbarEP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="12dp"
-                android:paddingEnd="20dp"
-                android:text="Profil"
-                android:textColor="#ffffff"
-                android:textSize="25sp"/>
-
-        </android.support.v7.widget.Toolbar>
 
         <ImageView
             android:id="@+id/ivFotoProfil"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            android:layout_marginTop="15dp"
-            android:contentDescription="fotoProfil"
             android:layout_marginBottom="5dp"
-            android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:src="@drawable/profil"/>
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="fotoProfil"
+            android:src="@drawable/profil" />
 
         <TextView
             android:id="@+id/tvUsername"
@@ -75,41 +79,45 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="#093847"
                     android:layout_margin="5dp"
-                    android:text="Nama"/>
+                    android:text="Nama"
+                    android:textColor="#093847" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="#093847"
                     android:layout_margin="5dp"
-                    android:text="E-mail"/>
+                    android:text="E-mail"
+                    android:textColor="#093847" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="#093847"
                     android:layout_margin="5dp"
-                    android:text="Nomor HP"/>
+                    android:text="Nomor HP"
+                    android:textColor="#093847" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="#093847"
                     android:layout_margin="5dp"
-                    android:text="Alamat"/>
+                    android:text="Alamat"
+                    android:textColor="#093847" />
 
             </LinearLayout>
 
@@ -117,30 +125,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/tvNamaProfl"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="#093847"
                     android:layout_margin="5dp"
-                    android:textStyle="bold"
-                    android:text=": Adevara"/>
+                    android:text=": Adevara"
+                    android:textColor="#093847"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/tvEmailProfil"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="#093847"
                     android:layout_margin="5dp"
-                    android:textStyle="bold"
-                    android:text=": adevara@gmail.com"/>
+                    android:text=": adevara@gmail.com"
+                    android:textColor="#093847"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/tvNohpProfil"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="#093847"
                     android:layout_margin="5dp"
-                    android:textStyle="bold"
-                    android:text=": +6285321173979"/>
+                    android:text=": +6285321173979"
+                    android:textColor="#093847"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvAlamatProfil"

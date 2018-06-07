@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                     ed.putString("passwd", password);
                     ed.commit();
 
-                    Intent intentLogin = new Intent(getBaseContext(), PeminjamanActivity.class);
+                    Intent intentLogin = new Intent(getBaseContext(), ProfilActivity.class);
                     startActivity(intentLogin);
                 }else{
                     Toast.makeText(getApplicationContext(), "Email atau Password salah", Toast.LENGTH_SHORT).show();

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -75,47 +76,47 @@ public class DaftarProdukActivity extends AppCompatActivity {
         bountyFragment = new BountyFragment();
         chequeFragment = new ChequeFragment();
 
-        mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(2);
+        menuItem.setChecked(true);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_user:
-                        mMainNav.setItemBackgroundResource(R.color.colorPrimary);
-                        setFragment(profilFragment);
-                        return true;
+                        Intent intent0 = new Intent(DaftarProdukActivity.this, ProfilActivity.class);
+                        startActivity(intent0);
+                        break;
 
                     case R.id.nav_chat:
-                        mMainNav.setItemBackgroundResource(R.color.colorAccent);
-                        setFragment(chatFragment);
-                        return true;
+                        Intent intent1 = new Intent(DaftarProdukActivity.this, Forum.class);
+                        startActivity(intent1);
+                        break;
 
                     case R.id.nav_shop:
-                        mMainNav.setItemBackgroundResource(R.color.colorPrimary);
-                        setFragment(shopFragment);
-                        return true;
+
+                        Intent intent5 = new Intent(DaftarProdukActivity.this, InfoUsahaActivity.class);
+                        startActivity(intent5);
+                        break;
 
                     case R.id.nav_bounty:
-                        mMainNav.setItemBackgroundResource(R.color.colorAccent);
-                        setFragment(bountyFragment);
-                        return true;
+                        Intent intent3 = new Intent(DaftarProdukActivity.this, PeminjamanActivity.class);
+                        startActivity(intent3);
+                        break;
 
                     case R.id.nav_cheque:
-                        mMainNav.setItemBackgroundResource(R.color.colorPrimary);
-                        setFragment(chequeFragment);
-                        return true;
-
-                    default:
-                        return false;
+                        Intent intent4 = new Intent(DaftarProdukActivity.this, CatatanKeuanganActivity.class);
+                        startActivity(intent4);
+                        break;
                 }
 
+
+                return false;
             }
         });
-    }
-
-    private void setFragment(android.support.v4.app.Fragment fragment){
-        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.main_frame, fragment);
-        fragmentTransaction.commit();
     }
 
 }

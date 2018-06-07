@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditUsahaActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#01579B">
+
+        <TextView
+            android:id="@+id/tvToolbarEP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="20dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="20dp"
+            android:paddingStart="12dp"
+            android:text="Info Usaha"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+    </android.support.v7.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="389dp"
@@ -14,31 +34,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center_horizontal"
+        android:layout_below="@+id/toolbar2"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar2"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:background="#01579B">
-
-            <TextView
-                android:id="@+id/tvToolbarEP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingEnd="20dp"
-                android:paddingLeft="12dp"
-                android:paddingRight="20dp"
-                android:paddingStart="12dp"
-                android:text="Info Usaha"
-                android:textColor="#ffffff"
-                android:textSize="25sp" />
-
-        </android.support.v7.widget.Toolbar>
 
         <ImageView
             android:layout_width="90dp"
@@ -226,23 +227,4 @@
 
     </LinearLayout>
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottomNavView"
-        android:layout_width="403dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#01579B"
-        android:paddingStart="12dp"
-        android:paddingLeft="12dp"
-        android:paddingEnd="12dp"
-        android:paddingRight="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:menu="@menu/nav_items" />
-
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
